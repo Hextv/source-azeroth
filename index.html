@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SourceAzeroth</title>
+  
+  <!-- Font Awesome 6 for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div id="page-loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <div class="loader-logo">Source Azeroth</div>
+  </div>
+</div>
+
+<header>
+  <div class="header-title-container">
+    <div class="site-logo"><img src="logo.png" alt="Source Azeroth Logo"></div>
+    <h1>Source Azeroth</h1>
+  </div>
+  
+    <!-- Main Top Menu -->
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <nav class="main-nav" id="main-nav">
+    <button class="nav-btn active" data-target="history-section">History</button>
+    <span class="nav-separator">|</span>
+    <button class="nav-btn" data-target="blog-section">Blog</button>
+    <span class="nav-separator">|</span>
+    <button class="nav-btn" data-target="archives-section">AArchives</button>
+    <span class="nav-separator">|</span>
+    <button class="nav-btn" data-target="contributors-section">Contributors</button>
+  </nav>
+</header>
+
+<!-- SECTION 1: HISTORY TIMELINE -->
+<main id="history-section" class="page-section active">
+  
+  <!-- Search Bar & Toolbar Buttons -->
+  <div class="toolbar-container">
+    <button id="open-rules-modal-btn" class="action-btn">
+      <i class="fa-solid fa-scroll"></i> Ruleset
+    </button>
+    
+    <div class="search-container">
+      <i class="fa-solid fa-search search-icon"></i>
+      <input type="text" id="search-bar" placeholder="Search events, keywords, or tools..." />
+      <button id="clear-search-btn" class="clear-btn hidden" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <button id="open-submit-modal-btn" class="action-btn">
+      <i class="fa-solid fa-plus"></i> Submit Event
+    </button>
+  </div>
+
+  <!-- Interactive Filters -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All History</button>
+    <button class="filter-btn" data-filter="core">Core Emulators</button>
+    <button class="filter-btn" data-filter="tools">Development Tools</button>
+    <button class="filter-btn" data-filter="web">Web & Analytics</button>
+  </div>
+
+  <section class="timeline-section">
+    <!-- Timeline container where JavaScript will inject data -->
+    <div class="timeline-container" id="timeline-container"></div>
+  </section>
+</main>
+
+<!-- SECTION 2: BLOG -->
+<main id="blog-section" class="page-section hidden">
+  <!-- Blog container where JavaScript will inject data -->
+  <section class="blog-container" id="blog-container"></section>
+</main>
+
+
+
+<!-- SECTION 4: AArchives (Ancient Archives) -->
+<main id="archives-section" class="page-section hidden">
+  <section class="archives-container">
+    <div class="hall-of-fame-header">
+      <h2><i class="fa-solid fa-box-archive"></i> AArchives (Ancient Archives)</h2>
+      <p>Historical snapshots of legendary WoW modding websites.</p>
+    </div>
+    
+    <div class="archives-grid">
+      <a href="Archives/www.gotwow.ic.cz/index.html" class="archive-card">
+        <i class="fa-solid fa-folder-open"></i>
+        <h3>www.gotwow.ic.cz</h3>
+        <p>The central hub for Skull's Hack Site.</p>
+      </a>
+    </div>
+  </section>
+</main>
+
+
+
+<!-- SECTION 3: CONTRIBUTORS (HALL OF FAME) -->
+<main id="contributors-section" class="page-section hidden">
+  <section class="contributors-container">
+    <div class="hall-of-fame-header">
+      <h2>Hall of Fame</h2>
+      <p>The archivists and developers maintaining SourceAzeroth.</p>
+    </div>
+    
+    <!-- This list will be populated by GitHub API via script.js -->
+    <div id="contributors-list" class="contributors-list">
+      <div class="loading-msg"><i class="fa-solid fa-spinner fa-spin"></i> Loading contributors...</div>
+    </div>
+    
+    <div id="see-more-container" class="see-more-container hidden">
+      <button id="see-more-contributors-btn" class="action-btn">See more</button>
+    </div>
+  </section>
+</main>
+
+<!-- RULESET MODAL -->
+<div id="rules-modal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2><i class="fa-solid fa-scroll"></i> Archive Ruleset</h2>
+      <button id="close-rules-modal-btn" class="close-btn">&times;</button>
+    </div>
+    <p class="modal-intro">Guiding rules for submitting content to the SourceAzeroth historical archive.</p>
+
+    <div class="rules-list">
+      <div class="rule-item">
+        <div class="rule-icon"><i class="fa-solid fa-ban"></i></div>
+        <div class="rule-content">
+          <h4>No Private Server Launches</h4>
+          <p>Promotional entries, player recruitment, or announcements for private server launches are strictly prohibited and will not be accepted.</p>
+        </div>
+      </div>
+
+      <div class="rule-item">
+        <div class="rule-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="rule-content">
+          <h4>DMCAs & Shutdown Exception</h4>
+          <p>As an exception, major legal actions, DMCAs, or forced shutdowns issued by Blizzard are allowed to be documented for historical preservation.</p>
+        </div>
+      </div>
+
+      <div class="rule-item">
+        <div class="rule-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <div class="rule-content">
+          <h4>Focus on Emulation & Tooling</h4>
+          <p>Submissions must center on open-source core emulators, software architecture, client modding tools, database editors, or analytics platforms.</p>
+        </div>
+      </div>
+
+      <div class="rule-item">
+        <div class="rule-icon"><i class="fa-solid fa-check-double"></i></div>
+        <div class="rule-content">
+          <h4>Verified & Factual Records</h4>
+          <p>All information must be accurate, factual, and verified by public code repositories, commit histories, or documented community milestones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT EVENT MODAL -->
+<div id="submit-modal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>Submit History Event</h2>
+      <button id="close-modal-btn" class="close-btn">&times;</button>
+    </div>
+    <p class="modal-intro">Fill out the event details below to generate the exact code snippet for a GitHub Pull Request.</p>
+    
+    <form id="submit-event-form">
+      <div class="form-group">
+        <label for="event-title">Event Title *</label>
+        <input type="text" id="event-title" placeholder="e.g. TrinityCore 3.3.5a Refactor" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="event-date">Date / Era *</label>
+          <input type="text" id="event-date" placeholder="e.g. November 2024" required />
+        </div>
+        <div class="form-group">
+          <label for="event-category">Category *</label>
+          <select id="event-category" required>
+            <option value="core">Core Emulators</option>
+            <option value="tools">Development Tools</option>
+            <option value="web">Web & Analytics</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="event-tag">Display Tag *</label>
+          <input type="text" id="event-tag" placeholder="e.g. Core Emulators" required />
+        </div>
+        <div class="form-group">
+          <label for="event-github">GitHub Repo (Optional)</label>
+          <input type="text" id="event-github" placeholder="e.g. owner/repo" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="event-description">Event Description *</label>
+        <textarea id="event-description" rows="4" placeholder="Describe the milestone or technical change..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Generate PR Snippet</button>
+    </form>
+
+    <!-- Output Snippet Box -->
+    <div id="snippet-output-container" class="hidden">
+      <hr class="divider">
+      <div class="snippet-header">
+        <span>Copy and paste this snippet into <code>data.js</code>:</span>
+        <button id="copy-snippet-btn" class="copy-btn"><i class="fa-regular fa-copy"></i> Copy Code</button>
+      </div>
+      <pre><code id="snippet-code"></code></pre>
+
+      <!-- Step-by-Step Instructions -->
+      <div class="pr-instructions">
+        <h4><i class="fa-solid fa-circle-info"></i> How to submit your Pull Request:</h4>
+        <ol>
+          <li>Click <strong>Copy Code</strong> above.</li>
+          <li>Open the repository's <code>data.js</code> file on GitHub.</li>
+          <li>Paste the code snippet inside the <code>timeline</code> array.</li>
+          <li>Commit the changes and open a <strong>Pull Request</strong>!</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Back to Top Button -->
+<button id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Footer Watermark -->
+<footer class="watermark">
+  <div class="footer-top">
+    <strong>SourceAzeroth</strong> - Initiated by Hex from the <a href="https://discord.gg/Mt27EtYRtu" target="_blank" class="wow-haven-link">WoW Haven</a> community. Maintained by everyone.
+  </div>
+  <div class="footer-buttons">
+    <a href="https://github.com/Hextv/source-azeroth" target="_blank" class="footer-btn github-btn">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+    <a href="https://discord.gg/hEBNwRK9pm" target="_blank" class="footer-btn discord-btn">
+      <i class="fa-brands fa-discord"></i> Discord
+    </a>
+    <a href="https://ko-fi.com/hex23" target="_blank" class="footer-btn donate-btn">
+      <i class="fa-solid fa-heart"></i> Donate
+    </a>
+  </div>
+</footer>
+
+<!-- External JavaScript -->
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

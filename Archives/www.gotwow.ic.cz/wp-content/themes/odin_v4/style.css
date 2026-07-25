@@ -1,0 +1,428 @@
+/*  
+Theme Name: Odinneke V4
+Theme URI: http://www.odinneke.nl
+Description: Custom created World of Warcraft Wordpress Theme. It is based on the encyclopedia pages at the Warcraft Homepage. V2 was renamed to V1 MC Theme and V3 never made it live. 
+Version: 1.0
+Author: Vincent Kuipers
+Author URI: http://www.odinneke.nl
+
+	Odinneke v4
+
+	It was made for my own weblog Tales of a WoW Addict and later made available publically.
+	View the weblog at http://www.odinneke.nl
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+/* 
+	My CSS file is still messy, mainy because it was built up from the ground.
+	Therefore, some default parts of the default WP Theme are missing (Calendar For Example)
+	If you do wish to use those parts, then don;t hesitate to contact me, so I can customize them.
+
+*/
+
+body {
+	font-size: 12px;
+	font-family: "Trebuchet MS", Tahoma, Verdana, sans-serif;
+	color: #FFFFFF;
+	text-align: center;	
+	background-image:url(/web/20121222005059im_/http://www.gotwow.ic.cz/wp-content/themes/odin_v4/img/bg3.jpg);
+	background-position:top center;
+	background-repeat:repeat-y;
+	background-color: #000000;
+	margin: 0px 0px 0px 0px;
+	padding: 0; 	
+}
+#page	{
+	text-align: left;
+	border:1px solid #000000;
+	background-image:url(/web/20121222005059im_/http://www.gotwow.ic.cz/wp-content/themes/odin_v4/img/page.jpg);
+	background-repeat:no-repeat;
+	background-color:#000000;
+	width: 760px;
+	margin: 0px auto;
+	padding: 0;		
+}
+body, h2 {
+	line-height:18px;
+}
+#header {
+	width: 760px;
+	margin-top:20px;
+	padding: 20px 0;
+	text-align: center;
+}
+#headerimg {
+	width: 100%;
+	text-decoration:none;
+	margin: 0;
+}
+#headerimg .blogtitle, #headerimg .description, small {
+	text-align:center;
+}
+#headerimg .blogtitle {
+	font-size:36px;
+	font-weight:bold;
+	display:block;
+	margin-bottom: 5px;
+}
+#headerimg .description {
+	font-size: 14px;
+	color: #AAAAAA;
+}
+/* If you use a custom header based on my image (or another offcourse), then uncomment the following line */
+/* #headerimg .blogtitle, #headerimg .description { display:none; } */
+
+
+#headerimg a {
+	font-family: "Trebuchet MS", Tahoma, Verdana, sans-serif;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.narrowcolumn {
+	background-image:url(/web/20121222005059im_/http://www.gotwow.ic.cz/wp-content/themes/odin_v4/img/page.jpg);
+	background-position:left -180px;
+	background-repeat:no-repeat;
+	background-color:#000000;
+	width: 580px;
+	float: left;
+	position:relative;
+	padding: 20px 10px 10px 10px;
+	margin:0px 0px 0px 0px;	
+}
+.widecolumn {
+	width: 580px;
+	padding: 20px 10px 10px 10px;
+	margin: 0px 0px 0px 90px;	
+	
+}
+.widecolumn .post {
+	padding-top:20px;
+}	
+.widecolumn .navigation {
+	line-height:24px;
+	padding-top:3px;	
+}
+
+#footer {
+	font-size:11px;
+	width:760px;
+	text-align:center;
+	position:relative;
+	display:block;
+	clear:both;
+	margin-bottom:0px;	
+}
+#footer a {
+	color:#FF8400;
+}
+small {
+	line-height:12px;
+}
+h1, h2, h3 {
+	font-weight: bold;
+}
+
+/* This is a custom Layout part that changes background in the comment part, for every other comment */
+.other {
+	background-image:url(/web/20121222005059im_/http://www.gotwow.ic.cz/wp-content/themes/odin_v4/img/comment_bg.jpg);
+}
+.alt {
+	margin-left:20px;
+}
+
+.comments {
+	font-size:12px;
+	color:#CCCCCC;
+	padding-bottom:20px;
+	width:520px;
+	padding-left:20px;
+	padding-top:20px;
+}
+.comments span {
+	font-size:16px;
+	font-weight:bold;
+	color:#5fa8e3;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.commentlist {
+	padding: 0;
+	text-align: justify;
+	}
+
+.commentlist li {
+	margin: 8px 0px 0px 10px;
+	padding: 4px 5px 0px 10px;
+	list-style: none;
+	border-left:2px solid #1e4378;
+	}
+.commentlist cite, .commentlist cite a {
+	font-weight: bold;
+	font-style: normal;
+	font-size: 16px;
+	color:#FFFFFF;
+	text-decoration:none;
+	}
+.commentmetadata {
+	font-weight: normal;
+	padding-left:5px;
+}
+.commentmetadata a {
+	color:#FF8400;
+	text-decoration:none;
+}
+
+#respond {
+	width:500px;
+	margin-left:40px;
+	padding-bottom:20px;
+	padding-top:10px;
+	border-top:1px dashed #dbb378;	
+}
+#respond span {
+	font-size:16px;
+	font-weight:bold;
+	color:#1e4378;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+#respond p {
+	color:#CCCCCC;
+}
+#respond a {
+	color:#FF8400;
+}
+#respond small {
+	color:#CCCCCC;
+	}
+
+/* POST DATA*/
+.post {
+	width:100%;
+	margin-bottom: 30px;
+}
+
+div.entry {
+	width:100%;
+	position:relative;
+	padding-top:15px;
+	color:#CCCCCC;
+	padding-bottom:5px;
+}
+.entry img {
+	max-width:100%;
+	border:0px;
+}
+.entry ul, .entry ol {
+	list-style-type:none;
+	display:block;
+	position:relative;
+	left:-10px;
+}
+.entry a {
+	color:#FF8400;
+	border-bottom:1px dashed #FF8400;
+	text-decoration:none;
+}
+.entry blockquote {
+	display:block;
+	position:relative;
+	border-left:3px solid #dbb378;
+	padding-left:5px;
+}
+
+.articleheader { width:100%; position:relative; min-height: 65px;}
+.avatar {width:62px; height:62px; background-position:top left; background-repeat:no-repeat; position:absolute;}
+.articletitle { font-family:Georgia, "Times New Roman", Times, serif; font-size:24px; color:#5fa8e3; padding-left:70px; padding-top:10px;}
+.articletitle a { color:#5fa8e3; text-decoration:none; }
+div.time_author { position:relative; font-size:10px; font-style:italic; color:#AAAAAA; padding-left:70px; margin-top:5px; }
+
+.postmetadata {
+	text-align: center;
+	position:relative;
+	color:#856d4a;
+	font-size:12px;
+	padding: 10px 0;
+	margin-top: 15px;
+	border-top:1px dashed #dbb378;
+	border-bottom:1px dashed #dbb378;
+}
+.alt {
+	font-size:10px;
+	width:500px;
+	text-align:left;
+}
+.postmetadata a {
+	text-decoration:none;
+	color:#FF8400;
+}
+
+.navigation {
+	width:540px;
+	padding-left:20px;
+	position:relative;
+	text-align: center;
+	font-family:Georgia, "Times New Roman", Times, serif; 
+	font-size:14px;
+	
+	color:#8e703f;
+	padding-bottom:12px;
+	}
+.navigation a {
+	color:#8e703f;
+	text-decoration:none;
+}
+.navigation a:hover {
+	color:#5b4b33;
+}
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left
+}
+
+.notfound {
+	width:540px;
+	margin-left:10px;
+	padding:10px;
+	color:#222222;
+}
+/* SIDE BAR */
+#sidebar
+{
+	display:block;
+	position:relative;
+	float:right;
+	padding: 20px 0 10px 0;
+	/*left:600px; */
+	width: 160px;
+	background-image:url(/web/20121222005059im_/http://www.gotwow.ic.cz/wp-content/themes/odin_v4/img/page.jpg);
+	background-position:right -180px;	
+	background-repeat:no-repeat;		
+}
+#sidebar ul, #sidebar ol {
+	display:block;
+	position:relative;
+	left:-20px;
+	list-style-type:none;
+}
+#sidebar ul li {
+	line-height:16px;	
+}
+#sidebar .home {
+	color:#FF8400;	
+}
+	
+#sidebar ul li span {
+	font-size:10px;
+	line-height:10px;
+}
+#sidebar ul li span a {
+	font-size:10px;
+	color:#FF8400;
+}
+#sidebar ul li h2 {
+	font-size:14px;
+	color:#FF8400;
+}
+#sidebar ul ul {
+	display:block;
+	position:relative;
+	width:160px;
+}
+#sidebar ul ul li {
+	display:block;
+	position:relative;
+	line-height:16px;
+	left:-10px;
+	top:-10px;
+}
+#sidebar ul ul ul {
+	display:block;
+	position:relative;
+	top:10px;
+	width:120px;
+}
+#sidebar a {
+	color:white;
+	font-size:11px;
+	text-decoration:none;
+}
+#sidebar img {
+	border:0px;
+	max-width:160px;
+}
+.searchform {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+/* IMAGES */
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+#s {
+	background-color:black;
+    border:1px solid white;
+	color:white;
+	filter:alpha(opacity=60);
+    -moz-opacity:.60;
+    opacity:.60;
+	padding:1px;	
+
+}
+#searchsubmit {
+	background-color:black;
+	border:1px solid white;
+	color:#FFFFFF;
+	padding-left:1px;
+	padding-right:1px;
+}
+
+/* Pure Layout - Fixed for missing images */
+.bg { background-color: #111111; width:100%; padding:20px; box-sizing: border-box; border:1px solid #333; border-radius: 8px; }
+.bgtop, .bgtopleft { margin:0; padding:0; }
+.bgbot { margin:0; padding:0; }
+.bgbotleft { margin:0; padding:0; }
+
+.outerbox-top, .outerbox-bot, .outerbox-left, .outerbox-right, .outerbox-topleft, .outerbox-botleft, .outerbox-topright, .outerbox-botright {
+    background-image: none !important; margin:0; padding:0;
+}
+/*
+     FILE ARCHIVED ON 00:50:59 Dec 22, 2012 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:03:40 Jul 25, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 2.278
+  exclusion.robots: 0.061
+  exclusion.robots.policy: 0.043
+  esindex: 0.014
+  cdx.remote: 25.643
+  LoadShardBlock: 155.945 (3)
+  PetaboxLoader3.datanode: 97.743 (4)
+  PetaboxLoader3.resolve: 141.395 (2)
+  load_resource: 1175.693
+*/

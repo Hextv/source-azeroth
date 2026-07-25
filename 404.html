@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Source Azeroth</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    html { zoom: 1.25; }
+
+    :root {
+      --primary-color: #f39c12;
+      --bg-color: #1a1a1a;
+      --text-color: #ecf0f1;
+      --card-bg: #2a2a2a;
+      --border-color: #444444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .error-box {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--primary-color);
+      border-radius: 10px;
+      padding: 50px 40px;
+      max-width: 520px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      line-height: 1;
+      letter-spacing: -4px;
+      opacity: 0.12;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    p {
+      color: #bdc3c7;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      transition: border-color 0.2s, color 0.2s;
+      background: var(--bg-color);
+      color: var(--text-color);
+      outline: none;
+      box-shadow: none;
+    }
+
+    .btn:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 30px 0 20px;
+      position: relative;
+    }
+
+    @media (max-width: 640px) {
+      html { zoom: 1; }
+      .error-box { padding: 35px 20px; }
+      h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="error-box">
+    <span class="error-code">404</span>
+    <h1>Page Not Found</h1>
+    <p>This page has been lost to the archives of time — or it never existed in the first place.</p>
+
+    <div class="btn-group">
+      <a href="index.html" class="btn">
+        <i class="fa-solid fa-house"></i> Go Home
+      </a>
+      <a href="index.html#history" class="btn">
+        <i class="fa-solid fa-clock-rotate-left"></i> Timeline
+      </a>
+      <a href="index.html#archives" class="btn">
+        <i class="fa-solid fa-box-archive"></i> AArchives
+      </a>
+    </div>
+
+    <hr class="divider">
+
+    <div class="btn-group">
+      <a href="https://github.com/Hextv/source-azeroth/issues" target="_blank" class="btn">
+        <i class="fa-brands fa-github"></i> Report broken link
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
