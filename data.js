@@ -439,6 +439,19 @@ const siteData = {
       ],
       tag: "Client Modding",
       githubRepo: "WarcraftXL/wxl-core"
+    },
+    {
+      id: "event-sourceazeroth-release-2026",
+      category: "web",
+      icon: "fa-solid fa-book-journal-whills",
+      date: "July 25, 2026",
+      title: "The Release of SourceAzeroth",
+      paragraphs: [
+        "SourceAzeroth was created by Hex from the WoW Haven community to document and preserve the rich history of World of Warcraft emulation, custom core development, and community tools.",
+        "As the modding scene continues to evolve, keeping track of major milestones, framework shifts, and client tools becomes vital. The platform serves as a collaborative, open-source knowledge base and interactive timeline for the entire emulation community."
+      ],
+      tag: "Community Archive",
+      githubRepo: "Hextv/source-azeroth"
     }
 ],
 
